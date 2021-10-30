@@ -1,20 +1,31 @@
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components';
+
+export const GlobalStyle = createGlobalStyle`
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+  * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+`;
 
 export const Background = styled.div`
-    background: linear-gradient( #e0e7f7 40% , #feb800 40%) ;
-    height: 100vh;
     width: 100%;
+    height: 100vh;
+    background: linear-gradient( #e0e7f7 40% , #feb800 40%);
+
     display: flex;
     justify-content: center;
     align-items: center;
 
     animation:fade-in .5s cubic-bezier(.39,.575,.565,1.000) both;
 
-    @keyframes fade-in{
-    0%{transform:translateY(20px);
-    opacity:0}
-    100%{transform:translateY(0);
-    opacity:1}};
+    @keyframes fade-in {
+    0% {transform:translateY(20px); opacity:0}
+    100% {transform:translateY(0); opacity:1}
+    };
 `;
 
 export const CalculatorWrapper = styled.div`
@@ -33,10 +44,8 @@ export const CalculatorWrapper = styled.div`
 
     transition: 0.8s;
 
-
     &:hover{
     transform: scale(1.006);
-
     }
 
     @media only screen and (min-width: 1024px) {
@@ -48,7 +57,7 @@ export const CalculatorWrapper = styled.div`
 export const Calc = styled.div`
     width: 100%;
     height: 3rem;
-    color: white;
+    color: #fff;
     font-size: 18px;
     opacity: 0.7;
     padding-right: 1rem;
@@ -111,13 +120,14 @@ export const Buttons = styled.button`
     height: 3rem;
     color: white;
     background-color: transparent;
-    cursor: pointer;
     font-size: 18px;
     border-radius: 50%;
     opacity: 0.6;
+    cursor: pointer;
+
     transition: 0.3s;
 
-    &:hover{
+    &:hover {
     opacity: 1;
     transform: scale(1.2);
     border: 1px solid rgba(255, 255, 255, 0.25)
@@ -155,9 +165,9 @@ export const LineContainer = styled.div`
 `;
 
 export const LineStl = styled.div`
-    background-color: #feb800;
     width: 11rem;
     height: 2px;
+    background-color: #feb800;
     border-top-left-radius: 1px;
     border-bottom-left-radius: 1px;
 
@@ -177,6 +187,6 @@ export const LineStl = styled.div`
     @keyframes pulseBox {
         0% {box-shadow: 0px 0px 10px 0px rgba(254, 184, 0, 0.6);}
         100% {box-shadow: 0px 0px 18px 0px rgba(254, 184, 0, 0.9);}
-}
+    }
 
 `;
